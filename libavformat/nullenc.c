@@ -33,6 +33,6 @@ const FFOutputFormat ff_null_muxer = {
     .p.audio_codec     = AV_NE(AV_CODEC_ID_PCM_S16BE, AV_CODEC_ID_PCM_S16LE),
     .p.video_codec     = AV_CODEC_ID_WRAPPED_AVFRAME,
     .write_packet      = null_write_packet,
-    .p.flags           = AVFMT_VARIABLE_FPS | AVFMT_NOFILE | AVFMT_NOTIMESTAMPS,
+    .p.flags           = AVFMT_TS_NONSTRICT | AVFMT_VARIABLE_FPS | AVFMT_NOFILE | AVFMT_NOTIMESTAMPS,
     .interleave_packet = ff_interleave_packet_passthrough,
 };
